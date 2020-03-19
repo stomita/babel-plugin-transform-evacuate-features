@@ -46,13 +46,13 @@ class A {
 }
 ```
 
-# Install
+## Install
 
 ```
 $ npm install babel-plugin-transform-evacuate-features --save-dev
 ```
 
-# Setup
+## Setup
 
 Add `transform-evacuate-features` in config file (`babel.config.js` or `.babelrc`), or `babel.transform()` options.
 
