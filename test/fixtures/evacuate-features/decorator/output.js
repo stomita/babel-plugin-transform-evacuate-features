@@ -6,7 +6,8 @@ class A {
   /*
   @preserve
   @evacuated
-  {"type":"Decorator","expression":{"type":"Identifier","name":"annotate"}}*/
+  {"type":"Decorator","expression":{"type":"Identifier","name":"annotate"}}
+  */
   foo() {
     console.log('foo');
   }
@@ -19,7 +20,8 @@ class B {
   /*
   @preserve
   @evacuated
-  {"type":"Decorator","expression":{"type":"Identifier","name":"annotate"}}*/
+  {"type":"Decorator","expression":{"type":"Identifier","name":"annotate"}}
+  */
   foo() {
     console.log('foo');
   }
@@ -29,12 +31,14 @@ class B {
   /*
   @preserve
   @evacuated
-  {"type":"Decorator","expression":{"type":"Identifier","name":"annotate"}}*/
+  {"type":"Decorator","expression":{"type":"Identifier","name":"annotate"}}
+  */
 
   /*
   @preserve
   @evacuated
-  {"type":"Decorator","expression":{"type":"CallExpression","callee":{"type":"Identifier","name":"annotate2"},"arguments":[{"type":"ObjectExpression","properties":[{"type":"ObjectProperty","method":false,"key":{"type":"Identifier","name":"flag"},"computed":false,"shorthand":false,"value":{"type":"BooleanLiteral","value":true}}]}]}}*/
+  {"type":"Decorator","expression":{"type":"CallExpression","callee":{"type":"Identifier","name":"annotate2"},"arguments":[{"type":"ObjectExpression","properties":[{"type":"ObjectProperty","method":false,"key":{"type":"Identifier","name":"flag"},"computed":false,"shorthand":false,"value":{"type":"BooleanLiteral","value":true}}]}]}}
+  */
   bar() {
     console.log('bar');
   }

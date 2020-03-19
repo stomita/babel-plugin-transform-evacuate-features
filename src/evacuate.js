@@ -21,7 +21,8 @@ function evacuateCodeAsComment(path, evacuatedTag) {
     `
 @preserve
 ${evacuatedTag}
-${JSON.stringify(node)}`
+${JSON.stringify(node)}
+`
   );
   path.addComments('leading', leadingComments);
   path.replaceWith(t.noop());

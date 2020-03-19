@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/index.js"],"names":["evacuateFeaturesPlugin"],"mappings":";;;;;;;;;;;;;;;;;;;AAAA;;AACA;;;;eAGeA,iB","sourcesContent":["import evacuateFeaturesPlugin from './evacuate';\nimport unevacuateFeaturesPlugin from './unevacuate';\n\nexport { evacuateFeaturesPlugin, unevacuateFeaturesPlugin };\nexport default evacuateFeaturesPlugin;\n"],"file":"index.js"}
