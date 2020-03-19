@@ -2,7 +2,7 @@
   "name": "babel-plugin-transform-evacuate-features",
   "version": "1.0.0",
   "description": "Turn proposal ES features into comments for parsers not supporting them",
-  "repository": "https://github.com/stomita/babel-plugin-transform-proposal-to-comment",
+  "repository": "https://github.com/stomita/babel-plugin-transform-evacuate-features",
   "license": "MIT",
   "main": "lib/index.js",
   "keywords": [
