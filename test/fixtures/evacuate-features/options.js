@@ -9,6 +9,6 @@ module.exports = {
     resolve(__dirname, '../../../src/evacuate.js'),
   ],
   parserOpts: {
-    plugins: ['classProperties', 'decorators-legacy'],
-  },
+    plugins: ['classProperties', 'decorators-legacy']
+  }
 };

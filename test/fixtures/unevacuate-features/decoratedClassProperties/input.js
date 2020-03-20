@@ -1,23 +1,45 @@
 class A {
-  /*
-  @preserve
-  @evacuated
-  {"type":"ClassProperty","static":false,"key":{"type":"Identifier","name":"a"},"computed":false,"value":null}
-  */
+  __evacuated_0() {
+    this.__evacuated__('classProperty', 'a', []);
+  }
+  /* double annotated class prop */
 
-  /*
-  @preserve
-  @evacuated
-  {"type":"ClassProperty","decorators":[{"type":"Decorator","expression":{"type":"Identifier","name":"annotateProp"}}],"static":false,"key":{"type":"Identifier","name":"b"},"computed":false,"value":{"type":"NumericLiteral","extra":{"rawValue":1,"raw":"1"},"value":1}}
-  */
+  __evacuated_1() {
+    this.__evacuated__(
+      'classProperty',
+      'b',
+      [
+        ['annotateProp'],
+        [
+          'annotateProp2',
+          {
+            flag: true
+          },
+          123
+        ]
+      ],
+      1
+    );
+  }
+  /* annotated print method */
 
-  /*
-  @preserve
-  @evacuated
-  {"type":"Decorator","expression":{"type":"CallExpression","callee":{"type":"Identifier","name":"annotateMethod"},"arguments":[{"type":"ObjectExpression","properties":[{"type":"ObjectProperty","method":false,"key":{"type":"Identifier","name":"flag"},"computed":false,"shorthand":false,"value":{"type":"BooleanLiteral","value":true}}]}]}}
-  */
+  __evacuated_2() {
+    this.__evacuated__('classMethod', 'print', [
+      [
+        'annotateMethod',
+        {
+          flag: true
+        }
+      ]
+    ]);
+  }
+
   print() {
     console.log('a = ', this.a, ', b = ', this.b);
   }
 
+  print2() {
+    console.log('print2');
+  }
+  /* end of class A */
 }

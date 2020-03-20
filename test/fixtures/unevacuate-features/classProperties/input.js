@@ -1,24 +1,21 @@
 class A {
-  /*
-  @preserve
-  @evacuated
-  {"type":"ClassProperty","static":false,"key":{"type":"Identifier","name":"a"},"computed":false,"value":{"type":"NumericLiteral","extra":{"rawValue":1,"raw":"1"},"value":1}}
-  */
-
+  __evacuated_0() {
+    this.__evacuated__('classProperty', 'a', [], 1);
+  }
 }
 
 class B {
   /* property */
+  __evacuated_0() {
+    this.__evacuated__('classProperty', 'b', [], 'b');
+  }
 
-  /*
-  @preserve
-  @evacuated
-  {"type":"ClassProperty","static":false,"key":{"type":"Identifier","name":"b"},"computed":false,"value":{"type":"StringLiteral","extra":{"rawValue":"b","raw":"'b'"},"value":"b"}}
-  */
-
+  __evacuated_1() {
+    this.__evacuated__('classProperty', 'c', []);
+  }
   /* method */
+
   foo() {
     console.log('foo');
   }
-
 }

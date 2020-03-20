@@ -7,7 +7,6 @@ class A {
   foo() {
     console.log('foo');
   }
-
 }
 
 class B {
@@ -28,5 +27,4 @@ class B {
   baz() {
     console.log('bar');
   }
-
 }

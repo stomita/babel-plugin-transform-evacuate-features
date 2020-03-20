@@ -3,11 +3,10 @@ function annotate() {}
 function annotate2() {}
 
 class A {
-  /*
-  @preserve
-  @evacuated
-  {"type":"Decorator","expression":{"type":"Identifier","name":"annotate"}}
-  */
+  __evacuated_0() {
+    this.__evacuated__("classMethod", "foo", [["annotate"]]);
+  }
+
   foo() {
     console.log('foo');
   }
@@ -15,30 +14,23 @@ class A {
 }
 
 class B {
-  /* method 1 */
+  __evacuated_0() {
+    this.__evacuated__("classMethod", "foo", [["annotate"]]);
+  }
 
-  /*
-  @preserve
-  @evacuated
-  {"type":"Decorator","expression":{"type":"Identifier","name":"annotate"}}
-  */
+  /* method 1 */
   foo() {
     console.log('foo');
   }
   /* method 2 */
 
 
-  /*
-  @preserve
-  @evacuated
-  {"type":"Decorator","expression":{"type":"Identifier","name":"annotate"}}
-  */
+  __evacuated_1() {
+    this.__evacuated__("classMethod", "bar", [["annotate"], ["annotate2", {
+      flag: true
+    }]]);
+  }
 
-  /*
-  @preserve
-  @evacuated
-  {"type":"Decorator","expression":{"type":"CallExpression","callee":{"type":"Identifier","name":"annotate2"},"arguments":[{"type":"ObjectExpression","properties":[{"type":"ObjectProperty","method":false,"key":{"type":"Identifier","name":"flag"},"computed":false,"shorthand":false,"value":{"type":"BooleanLiteral","value":true}}]}]}}
-  */
   bar() {
     console.log('bar');
   }
