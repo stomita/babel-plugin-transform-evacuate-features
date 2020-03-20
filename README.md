@@ -1,7 +1,7 @@
 # babel-plugin-transform-evacuate-features
 
-Turn proposal ES features (like class-properties or decorators) into comments for parsers which does not support these syntax.
-It is expected to use with unevacuate plugin in order to restore the comment-evacuated feature.
+Turn proposal ES features (like class-properties or decorators) into class methods for parsers which does not support these syntax.
+It is expected to use with unevacuate plugin to restore the evacuated feature.
 
 ## Example
 
@@ -25,23 +25,20 @@ class A {
 
 ```javascript
 class A {
-  /*
-  @preserve
-  @evacuated
-  {"type":"ClassProperty","static":false,"key":{"type":"Identifier","name":"a"},"computed":false,"value":null}
-  */
+  __evacuated_0() {
+    this.__evacuated__("classProperty", "a", []);
+  }
 
-  /*
-  @preserve
-  @evacuated
-  {"type":"ClassProperty","decorators":[{"type":"Decorator","expression":{"type":"Identifier","name":"annotateProp"}}],"static":false,"key":{"type":"Identifier","name":"b"},"computed":false,"value":{"type":"NumericLiteral","extra":{"rawValue":1,"raw":"1"},"value":1}}
-  */
+  __evacuated_1() {
+    this.__evacuated__("classProperty", "b", [["annotateProp"]], 1);
+  }
 
-  /*
-  @preserve
-  @evacuated
-  {"type":"Decorator","expression":{"type":"CallExpression","callee":{"type":"Identifier","name":"annotateMethod"},"arguments":[{"type":"ObjectExpression","properties":[{"type":"ObjectProperty","method":false,"key":{"type":"Identifier","name":"flag"},"computed":false,"shorthand":false,"value":{"type":"BooleanLiteral","value":true}}]}]}}
-  */
+  __evacuated_2() {
+    this.__evacuated__("classMethod", "print", [["annotateMethod", {
+      flag: true
+    }]]);
+  }
+
   print() {
     console.log('a = ', this.a, ', b = ', this.b);
   }
@@ -68,5 +65,16 @@ Note that `parserOpts.plugins` might be needed to tell babel parser to recognize
     "plugins": ["class-properties", "decorator-legacy"]
   }
 }
+```
 
+If you want to restore the evacuated class property / class method decorators, it is required to import `unevacuateFeaturesPlugin` and pass to the babel plugin.
+
+```json
+import { unevacuateFeaturesPlugin } from 'babel-plugin-transform-evacuate-features';
+module.exports = {
+  plugins: [unevacuateFeaturesPlugin],
+  parserOpts: {
+    plugins: ["class-properties", "decorator-legacy"]
+  }
+};
 ```
